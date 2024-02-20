@@ -1,0 +1,192 @@
+.product_admin_container {
+  min-height: 100vh;
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+
+  > .admin_sidebar {
+    height: 100%;
+    width: 15%;
+  }
+
+  > .product_admin_main {
+    height: 100%;
+    width: 85%;
+    padding: 1vmax;
+    @include flex(column, flex-start, flex-start);
+    gap: 1vmax;
+    background-color: $bg-light-blue;
+
+    > .product_admin_form {
+      height: 100%;
+      width: 90%;
+      margin: auto;
+      padding: 1vmax;
+      background-color: $text-color-Lighter-gray;
+
+      h1 {
+        font-size: 2vmax;
+        text-align: center;
+        text-transform: uppercase;
+        word-spacing: 0.3vmax;
+        width: 100%;
+        padding: 1vmax 0;
+        border-bottom: 1px solid $text-color-black;
+      }
+
+      > .product_admin_form_wrapper {
+        height: 100%;
+        width: 100%;
+        @include grid(repeat(2, 1fr));
+
+        > .product_admin_form_left {
+          height: 100%;
+          width: 100%;
+          padding: 1vmax;
+          @include flex(column);
+          gap: 2vmax;
+
+          > .product_admin_image_container {
+            @include flex(row, center, center);
+            gap: 1vmax;
+            width: 100%;
+            height: 100%;
+            flex-wrap: wrap;
+
+            > .product_admin_image {
+              @include flex();
+              object-fit: fill;
+              width: 30%;
+              height: 20%;
+              background-color: #fefefe;
+              position: relative;
+
+              &:hover {
+                background-color: red;
+
+                > img {
+                  opacity: 0.3;
+                }
+                > svg {
+                  display: block;
+                }
+              }
+
+              > img {
+                height: 100%;
+                width: 100%;
+              }
+
+              > svg {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+              }
+            }
+          }
+
+          > input {
+            width: 100%;
+            padding: 0.8vmax;
+            border: 2px solid $text-color-Light-gray;
+            outline: none;
+
+            &:hover,
+            &:focus {
+              border: 2px solid $bg-dark-blue;
+              box-shadow: 0px 0px 6px 1px $bg-dark-blue;
+            }
+          }
+        }
+
+        > .product_admin_form_right {
+          height: 100%;
+          width: 100%;
+          padding: 1vmax;
+          @include flex(column, flex-start, flex-start);
+          gap: 2vmax;
+
+          .upt_buttons {
+            width: 100%;
+            @include flex(row, space-between);
+            gap: 1vmax;
+
+            > button:nth-child(1) {
+              background-color: $bg-dark-blue;
+              color: white;
+              padding: 0.5vmax 1vmax;
+            }
+
+            > button:nth-child(2) {
+              background-color: red;
+              color: white;
+              padding: 0.5vmax 1vmax;
+            }
+          }
+
+          > button {
+            background-color: $bg-dark-blue;
+            color: white;
+            padding: 0.5vmax 1vmax;
+          }
+
+          .product_admin_input {
+            width: 100%;
+            @include flex(column, flex-start, flex-start);
+
+            > label {
+              width: 100%;
+              font-weight: 600;
+            }
+
+            > input,
+            > textarea {
+              width: 100%;
+              padding: 0.8vmax;
+              border: 2px solid $text-color-Light-gray;
+              outline: none;
+
+              &:hover,
+              &:focus {
+                border: 2px solid $bg-dark-blue;
+                box-shadow: 0px 0px 6px 1px $bg-dark-blue;
+              }
+            }
+          }
+
+          .product_admin_input_half {
+            width: 100%;
+            @include grid(repeat(2, 1fr));
+            grid-auto-flow: row;
+            gap: 2vmax;
+
+            > div > label {
+              width: 100%;
+              font-weight: 600;
+            }
+
+            > div > input,
+            > div > select {
+              width: 100%;
+              padding: 0.8vmax;
+              border: 2px solid $text-color-Light-gray;
+              outline: none;
+
+              &:hover,
+              &:focus {
+                border: 2px solid $bg-dark-blue;
+                box-shadow: 0px 0px 6px 1px $bg-dark-blue;
+              }
+
+              > option {
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

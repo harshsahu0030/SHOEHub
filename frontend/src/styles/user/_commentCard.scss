@@ -1,0 +1,44 @@
+.commentCard_container {
+  width: 100%;
+  height: auto;
+  @include flex(column, flex-start, flex-start);
+  gap: 0.5vmax;
+  padding: 1vmax 2vmax;
+  border-radius: 10px;
+  background-color: $bg-color-black-light;
+
+  > .commentCard_top {
+    width: 100%;
+    @include flex(row, space-between, flex-start);
+    font-size: 1vmax;
+
+    > div {
+      > svg {
+        font-size: 1vmax;
+        color: gold;
+      }
+    }
+  }
+
+  > .commentCard_center {
+    width: 100%;
+    font-size: 1vmax;
+  }
+
+  > .commentCard_bottom {
+    width: 100%;
+    @include flex(row, space-between, flex-start);
+    font-size: 0.6vmax;
+    color: $text-color-Light-gray;
+
+    > div {
+      @include flex(row, flex-start, center);
+      gap: 0.5vmax;
+
+      > svg {
+        font-size: 0.8vmax;
+        cursor: pointer;
+      }
+    }
+  }
+}

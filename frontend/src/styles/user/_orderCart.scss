@@ -1,0 +1,87 @@
+.orderCart_container {
+  height: 30vh;
+  width: 100%;
+  background-color: $bg-color-black-lighter;
+  border-radius: 10px;
+
+  > .orderCart_wrapper {
+    height: 100%;
+    width: 100%;
+    padding: 1vmax;
+    gap: 1vmax;
+    @include flex(row, flex-start, center);
+    position: relative;
+
+    > svg {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      cursor: pointer;
+      transition: all 200ms ease-in-out;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    > img {
+      height: 100%;
+      width: 30%;
+      object-fit: contain;
+    }
+
+    > .orderCart_details {
+      @include flex(column, center, flex-start);
+      gap: 0.5vmax;
+
+      > h5 {
+        font-size: 1vmax;
+        text-transform: uppercase;
+      }
+
+      > span {
+        font-size: 0.8vmax;
+      }
+
+      > .orderCart_details_des {
+        font-size: 0.8vmax;
+      }
+
+      > .orderCart_details_price {
+        font-size: 1vmax;
+        @include flex();
+        gap: 0.5vmax;
+        font-weight: 600;
+
+        > span:nth-child(1) {
+          font-size: 0.8vmax;
+          font-weight: 400;
+        }
+
+        > span:nth-child(2) {
+          color: red;
+          font-size: 0.8vmax;
+        }
+      }
+
+      > .orderCart_details_select {
+        > label {
+          font-size: 0.7vmax;
+        }
+
+        > select {
+          background-color: $bg-color-black;
+          color: $text-color-white;
+          padding: 0 0.3vmax;
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .orderCart_container {
+    height: 20vh;
+  }
+}

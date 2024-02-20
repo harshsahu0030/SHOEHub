@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+//templates
+@import "./mixin";
+@import "./colors";
+
+//user
+@import "./user/home";
+@import "./user/header";
+@import "./user/signin";
+@import "./user/signup";
+@import "./user/cart";
+@import "./user/wishlist";
+@import "./user/banner";
+@import "./user/category_section";
+@import "./user/productCarousel";
+@import "./user/product";
+@import "./user/productSlider";
+@import "./user/products";
+@import "./user/productCart";
+@import "./user/ratingsOverview";
+@import "./user/profile";
+@import "./user/addComment";
+@import "./user/commentCard";
+@import "./user/breadcrumbs";
+@import "./user/orderCart";
+@import "./user/oderConfirmation";
+@import "./user/paginationCom";
+
+//both
+@import "./loader";
+@import "./footer";
+
+// admin
+@import "./admin/dashboard";
+@import "./admin/products_admin";
+@import "./admin/customers_admin";
+@import "./admin/transactions_admin";
+@import "./admin/product_admin";
+@import "./admin/orders_admin";
+@import "./admin/header_admin";
+@import "./admin/sidebar_admin";
+@import "./admin/box_admin";
+@import "./admin/table_admin";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $bg-color-black-light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  @include flex(row, flex-start, center);
+}
+
+li {
+  list-style-type: none;
+}
+
+hr {
+  width: 100%;
+  height: 1px solid $text-color-Lighter-gray;
+  margin: 1vmax 0;
+}
+
+.btn {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+  font-weight: 600;
+  outline: none;
+  border: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    background-color: $bg-light-blue;
+  }
+}
+
+.active {
+  background-color: $bg-dark-blue;
+  color: $text-color-white;
+}
+
+.red {
+  font-size: 0.8vmax;
+  font-weight: 400;
+  color: red;
+}

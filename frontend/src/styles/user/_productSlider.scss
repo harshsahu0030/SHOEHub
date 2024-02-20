@@ -1,0 +1,84 @@
+.productSlider_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vmax;
+  height: 100%;
+  width: 100%;
+  padding: 1vmax;
+
+  .current-image {
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 7px #666;
+    width: 100%;
+    height: 100%;
+    animation-duration: 3s;
+    object-fit: contain;
+  }
+
+  .circle-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+  }
+
+  .current-indicator {
+    background-color: #ffffff;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+
+    > img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .active-indicator {
+    border: 1px solid $custom-cyan;
+    opacity: 0.5;
+  }
+
+  .hide-current-image {
+    display: none;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .productSlider_container {
+    flex-direction: column-reverse;
+    gap: 3vmax;
+    height: 70vh;
+
+    .circle-indicators {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .current-indicator {
+      height: 35px;
+      width: 35px;
+    }
+  }
+}

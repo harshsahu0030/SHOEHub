@@ -1,0 +1,21 @@
+.box_admin {
+  height: 8vmax;
+  width: 16vmax;
+  padding: 1vmax;
+  background-color: $text-color-white;
+  @include flex(row, flex-start, center);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+
+  &:hover {
+    background-color: $bg-dark-blue;
+    color: $text-color-white;
+  }
+
+  > .box_admin_info {
+    @include flex(column, flex-start, flex-start);
+    padding: 0 1vmax;
+    gap: 0.5vmax;
+  }
+}

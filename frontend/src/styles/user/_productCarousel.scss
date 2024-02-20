@@ -1,0 +1,148 @@
+.advertisement_container {
+  @include flex(column, flex-start, flex-start);
+  height: 60vh;
+  width: 100%;
+  padding: 1vmax 4vmax;
+  gap: 1.5vmax;
+  margin: 3vmax 0;
+
+  > h3 {
+    font-weight: 500;
+    font-size: 1.2vmax;
+
+    > span {
+      background: linear-gradient(
+        to right,
+        rgb(6, 223, 195),
+        rgb(41, 191, 245)
+      );
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: $bg-color-black-light;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  cursor: pointer;
+  border-radius: 50px;
+  background: linear-gradient(
+    $bg-color-black,
+    $bg-color-black-light,
+    $bg-color-black-lighter,
+    $text-color-Light-gray
+  );
+
+  &:hover {
+    border: 1px solid $custom-cyan;
+  }
+}
+
+.card img {
+  position: absolute;
+  z-index: 3;
+  object-fit: contain;
+  transition: 0.5s;
+}
+
+.card:hover img {
+  scale: 0.5;
+  opacity: 0.9;
+  object-fit: contain;
+  transform: translateY(-70px);
+}
+
+.card .content {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: scale(0);
+  transition: 0.5s;
+}
+
+.card:hover .content {
+  transform: scale(1);
+  bottom: 25px;
+}
+
+.content .title {
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1em;
+  font-size: 1.2vmax;
+  text-overflow: ellipsis;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.content .title span {
+  font-weight: 300;
+  font-size: 1vmax;
+}
+
+.content .sci {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.sci li {
+  list-style: none;
+  font-size: 0.8vmax;
+}
+
+.sci li a {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  fill: currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: 0.5s;
+}
+
+.sci li a:hover {
+  fill: currentColor;
+  color: rgba(255, 255, 255, 1);
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 600px) {
+  .advertisement_container {
+    height: 40vh;
+  }
+}

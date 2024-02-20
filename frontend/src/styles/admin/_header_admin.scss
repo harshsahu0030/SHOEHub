@@ -1,0 +1,35 @@
+.header_admin_container {
+  min-height: 8vh;
+  width: 100%;
+  padding: 0.5vmax 1vmax;
+  @include flex(row, space-between, center);
+
+  > .header_admin_input {
+    height: 100%;
+    width: 30%;
+    position: relative;
+
+    @include flex(row, flex-start, center);
+
+    > input {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      padding: 1vmax 3vmax;
+      outline: none;
+      border: none;
+      background-color: $text-color-white;
+    }
+
+    > svg {
+      position: absolute;
+      left: 2%;
+    }
+  }
+
+  > .header_admin_links {
+    height: 100%;
+    @include flex(row, flex-start, center);
+    gap: 1vmax;
+  }
+}

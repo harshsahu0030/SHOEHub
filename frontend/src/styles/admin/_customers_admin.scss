@@ -1,0 +1,28 @@
+.customers_admin_container {
+  height: 100vh;
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+
+  > .admin_sidebar {
+    height: 100%;
+    width: 15%;
+  }
+
+  > .customers_admin_main {
+    height: 100vh;
+    width: 85%;
+    padding: 1vmax;
+    background-color: $bg-light-blue;
+    @include flex(column, flex-start, flex-start);
+    gap: 1vmax;
+
+    > .customers_admin_infoBox {
+      width: 100%;
+      @include flex(row, space-evenly, center);
+    }
+    > .customers_admin_table {
+      width: 100%;
+      overflow-x: scroll;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+.product_container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $bg-color-black;
+  color: $text-color-Lighter-gray;
+
+  .product_wrapper {
+    min-height: 90vh;
+    width: 100%;
+    padding: 1vmax 5vmax;
+    @include grid(repeat(2, 1fr));
+
+    > .product_left {
+      height: 80vh;
+      width: 100%;
+      padding: 1vmax;
+    }
+
+    > .product_right {
+      @include flex(column, flex-start, flex-start);
+      gap: 1vmax;
+      height: 100%;
+      width: 100%;
+      padding: 2vmax;
+
+      > .product_head {
+        @include flex(column, flex-start, flex-start);
+        gap: 0.5vmax;
+
+        > h5 {
+          font-size: 1.2vmax;
+          text-transform: uppercase;
+        }
+
+        > h1 {
+          font-size: 3vmax;
+          text-transform: capitalize;
+        }
+
+        > p {
+          font-size: 1vmax;
+        }
+      }
+
+      > .product_overview {
+        @include flex();
+        gap: 0.5vmax;
+        padding: 0.3vmax 0.6vmax;
+        border: 1px solid $text-color-Light-gray;
+        font-size: 1vmax;
+
+        > span {
+          @include flex();
+          gap: 0.3vmax;
+
+          > svg {
+            font-size: 1vmax;
+            color: gold;
+          }
+        }
+      }
+
+      > .product_price {
+        @include flex();
+        gap: 1vmax;
+
+        > h2 {
+          font-size: 2.5vmax;
+          font-weight: 500;
+        }
+
+        > span:nth-child(2) {
+          font-weight: 500;
+          font-size: 1.2vmax;
+        }
+        > span:nth-child(3) {
+          color: rgb(247, 52, 52);
+          font-size: 1.2vmax;
+          font-weight: 500;
+        }
+      }
+
+      > h6 {
+        font-size: 0.8vmax;
+        background: linear-gradient(
+          to right,
+          rgb(6, 223, 195),
+          rgb(41, 191, 245)
+        );
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+
+      .product_buttons {
+        width: 100%;
+        @include grid(repeat(2, 1fr));
+        gap: 2vmax;
+        margin-top: 2vmax;
+
+        > button:nth-child(1) {
+          @include flex();
+          gap: 0.5vmax;
+          padding: 1vmax 2vmax;
+          font-size: 1vmax;
+          background-image: linear-gradient(
+            to right,
+            $custom-cyan,
+            $custom-blue
+          );
+
+          > svg {
+            font-size: 1.5vmax;
+          }
+        }
+
+        > button:nth-child(2) {
+          @include flex();
+          gap: 0.5vmax;
+          padding: 1vmax 2vmax;
+          font-size: 1vmax;
+          color: $text-color-Light-gray;
+          background-color: transparent;
+          border: 1px solid $text-color-Lighter-gray;
+
+          > svg {
+            font-size: 1.5vmax;
+          }
+        }
+      }
+
+      > h5 {
+        font-size: 1.2vmax;
+        @include flex();
+        gap: 0.5vmax;
+        > svg {
+          font-size: 1.5vmax;
+        }
+      }
+
+      > .product_details {
+        width: 100%;
+        @include grid(repeat(2, 1fr));
+        gap: 1vmax;
+
+        > div {
+          @include flex(column, flex-start, flex-start);
+          font-size: 1vmax;
+          gap: 0.2vmax;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .product_container {
+    .product_wrapper {
+      @include grid(1fr);
+      padding: 0vmax 2vmax;
+    }
+  }
+}

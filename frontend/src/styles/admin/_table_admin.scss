@@ -1,0 +1,25 @@
+.table_admin_container {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1vmax 0;
+
+  > thead > tr > th,
+  > tbody > tr > td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 1vmax;
+  }
+
+  > tbody > tr:nth-child(odd) {
+    background-color: $text-color-white;
+  }
+
+  svg {
+    cursor: pointer;
+    font-size: 1.5vmax;
+
+    &:hover {
+      color: green;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.orders_admin_container {
+  min-height: 100vh;
+  width: 100%;
+  @include flex(row, flex-start, flex-start);
+
+  > .admin_sidebar {
+    height: 100%;
+    width: 15%;
+  }
+
+  > .orders_admin_main {
+    height: 100vh;
+    width: 85%;
+    padding: 1vmax;
+    @include flex(column, flex-start, flex-start);
+    gap: 1vmax;
+    background-color: $bg-light-blue;
+
+    > .orders_admin_infoBox {
+      width: 100%;
+      @include flex(row, space-evenly, center);
+    }
+
+    > .orders_admin_table {
+      width: 100%;
+      overflow-x: scroll;
+    }
+  }
+}

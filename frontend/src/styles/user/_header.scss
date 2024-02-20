@@ -1,0 +1,195 @@
+.header_container {
+  @include flex(row, space-between, center);
+  height: 12vh;
+  width: 100%;
+  padding: 1vmax 5vmax;
+  background-color: $bg-color-black;
+  color: $text-color-Lighter-gray;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  > .header_left {
+    height: 100%;
+    width: 100%;
+    @include flex(row, flex-start, center);
+    gap: 3vmax;
+
+    > img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    > ul {
+      height: 100%;
+      @include flex(row, center, center);
+      gap: 1.5vmax;
+
+      > li {
+        height: 100%;
+        @include flex(column, center, flex-start);
+        font-size: 0.8vmax;
+        padding: 0 0.8vmax;
+        transition: all 200ms ease-in-out;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-image: linear-gradient(
+            to right,
+            rgb(6, 223, 195),
+            rgb(41, 191, 245)
+          );
+          transition: all 0.3s ease-in-out;
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  > .header_right {
+    height: 100%;
+    width: 100%;
+    @include flex(row, flex-end, center);
+    gap: 1.5vmax;
+
+    > .header_search {
+      height: 100%;
+      @include flex(row, flex-start, center);
+      font-size: 0.8vmax;
+      padding: 0 0.8vmax;
+      transition: all 200ms ease-in-out;
+      position: relative;
+      background-color: $bg-color-black-lighter;
+      border-radius: 10px;
+
+      > input {
+        outline: none;
+        border: none;
+        padding: 0 0.8vmax;
+        background-color: transparent;
+        color: $text-color-white;
+      }
+
+      > svg {
+        font-size: 2.5vmax;
+        padding: 0.5vmax;
+        border-radius: 100%;
+        border: 1px solid transparent;
+        transition: all 200ms ease-in-out;
+        cursor: pointer;
+      }
+    }
+
+    > .header_icons {
+      @include flex(row, flex-start, center);
+      gap: 1vmax;
+
+      > svg {
+        cursor: pointer;
+        font-size: 2.5vmax;
+        padding: 0.5vmax;
+        border-radius: 100%;
+        border: 1px solid transparent;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+          border: 1px solid rgb(6, 223, 195);
+        }
+      }
+    }
+  }
+
+  .header_dropdown {
+    position: absolute;
+    top: 100%;
+    width: 80%;
+    @include grid(1fr 2fr);
+    padding: 1vmax;
+    gap: 1vmax;
+    background-color: $bg-color-black-lighter;
+    border-radius: 10px;
+    display: none;
+    transition: all 500ms ease-in-out;
+    overflow: hidden;
+
+    .header_dropdown_left {
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      > img {
+        @include flex();
+        width: 100%;
+      }
+    }
+
+    .header_dropdown_right {
+      height: 100%;
+      width: 100%;
+      @include flex(row, flex-start, center);
+
+      > ul {
+        width: 100%;
+        @include grid(repeat(3, 1fr), 4fr);
+        justify-content: center;
+        align-content: center;
+        gap: 1vmax;
+
+        > li {
+          font-size: 0.8vmax;
+          text-transform: capitalize;
+
+          &:hover {
+            color: $custom-cyan;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header_container {
+    padding: 1vmax 2vmax;
+
+    > .header_left {
+      > img {
+        height: 60%;
+      }
+
+      > ul {
+        display: none;
+      }
+    }
+    > .header_right {
+      > .header_search {
+        height: 50%;
+
+        > input {
+        }
+
+        > svg {
+          font-size: 4vmax;
+        }
+      }
+      > .header_icons {
+        display: none;
+      }
+    }
+  }
+}

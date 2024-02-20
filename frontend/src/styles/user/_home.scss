@@ -1,0 +1,20 @@
+.home_container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $bg-color-black;
+  color: $text-color-white;
+
+  .home_wrapper {
+    margin-top: 3vmax;
+    min-height: 100vh;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home_container {
+    .home_wrapper {
+      margin-top: 1vmax;
+    }
+  }
+}

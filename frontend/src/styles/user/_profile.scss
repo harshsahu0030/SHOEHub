@@ -1,0 +1,91 @@
+.profile_container {
+  min-height: 100vh;
+  width: 100%;
+  background-color: $bg-color-black;
+  color: $text-color-white;
+
+  .profile_wrapper {
+    @include grid(repeat(2, 1fr));
+    min-height: 80vh;
+    width: 100%;
+    padding: 1vmax 5vmax;
+
+    > .profile_left {
+      @include flex();
+      width: 100%;
+      height: 100%;
+      padding: 2vmax;
+
+      > ul {
+        width: 100%;
+        @include flex(column, flex-start, flex-start);
+        gap: 1vmax;
+
+        > li {
+          @include flex(row, space-between, center);
+          width: 100%;
+          padding: 1vmax;
+          border: 1px solid $text-color-Lighter-gray;
+          font-size: 1vmax;
+          cursor: pointer;
+          border-radius: 10px;
+
+          > svg {
+            font-size: 1vmax;
+          }
+
+          &:hover {
+            border: 1px solid $custom-cyan;
+            color: $custom-cyan;
+          }
+        }
+      }
+    }
+
+    > .profile_right {
+      @include flex(column);
+      width: 100%;
+      height: 100%;
+      padding: 1vmax;
+      gap: 1vmax;
+
+      > h2 {
+        font-size: 1.5vmax;
+      }
+
+      > img {
+        height: 5vmax;
+        width: 5vmax;
+        border-radius: 50%;
+        object-fit: contain;
+        background-color: $bg-dark-blue;
+      }
+
+      > h5 {
+        font-size: 1vmax;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .profile_container {
+    padding: 1vmax 2vmax;
+
+    .profile_wrapper {
+      margin-top: 1vmax;
+      @include grid(1fr);
+
+      > .profile_left {
+        display: none;
+      }
+
+      > .profile_right {
+        @include grid(repeat(2, 1fr));
+        padding: 1vmax;
+        gap: 2vmax;
+      }
+    }
+  }
+}

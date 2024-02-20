@@ -1,0 +1,6 @@
+.paginationCom_container {
+  width: 100%;
+  @include flex();
+  padding: 1vmax 0;
+  background-image: linear-gradient(to right, $custom-cyan, $custom-blue);
+}

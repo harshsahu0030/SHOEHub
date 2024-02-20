@@ -1,0 +1,22 @@
+.breadcrumbs_container {
+  height: 5vh;
+  width: 100%;
+  @include flex(row, flex-start, center);
+  padding: 0 2vmax;
+  color: $text-color-Light-gray;
+  font-size: 0.8vmax;
+  font-weight: 600;
+  gap: 0.3vmax;
+  background-color: $bg-color-black;
+
+  span {
+    @include flex(row, flex-start, center);
+  }
+
+  span:nth-last-child(1) {
+    background: linear-gradient(to right, rgb(6, 223, 195), rgb(41, 191, 245));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
